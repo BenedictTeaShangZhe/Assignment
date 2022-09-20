@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/ic_homepage"
+        android:icon="@drawable/ic_homepage"
+        android:title="Homepage"/>
+
+    <item
+        android:id="@+id/ic_search"
+        android:icon="@drawable/ic_search"
+        android:title="Searching"/>
+    <item
+        android:id="@+id/ic_foodbank"
+        android:icon="@drawable/ic_foodbank"
+        android:title="Food Bank"/>
+    <item
+        android:id="@+id/ic_userprofile"
+        android:icon="@drawable/ic_userprofile"
+        android:title="User Profile"/>
+</menu>
