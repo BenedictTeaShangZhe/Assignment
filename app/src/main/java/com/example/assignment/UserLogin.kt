@@ -1,16 +1,16 @@
 package com.example.assignment
 
+import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
-import android.widget.Button
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputLayout
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -35,7 +35,6 @@ class UserLogin : AppCompatActivity() {
     private lateinit var loginButton:Button
     private lateinit var clearButton:Button
     private lateinit var registerText:TextView
-    private lateinit var tvTesting:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,9 +47,6 @@ class UserLogin : AppCompatActivity() {
         loginButton = findViewById(R.id.btnRegister)
         clearButton = findViewById(R.id.btnClear)
         registerText = findViewById(R.id.tvLogin)
-        tvTesting = findViewById(R.id.txtTesting)
-
-
 
 
         //Database declaration(Copy)
@@ -60,6 +56,7 @@ class UserLogin : AppCompatActivity() {
         //input validation
         phoneFocusListener()
         passwordFocusListener()
+
 
 
         loginButton.setOnClickListener(){
@@ -93,6 +90,9 @@ class UserLogin : AppCompatActivity() {
         }
 
     }
+
+
+
 
     private fun login() {
         val phoneNumber:String = txtPhone.text.toString()

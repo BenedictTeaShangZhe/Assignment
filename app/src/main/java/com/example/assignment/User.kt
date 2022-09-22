@@ -12,5 +12,6 @@ data class User(
     val Address:String="",
     val Birthday:String ="",
     val Status:String = "Not Approved",
+    val RejectedReason:String = "",
     val ApprovedTime:String=""
 )
