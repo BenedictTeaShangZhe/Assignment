@@ -141,9 +141,7 @@ class UserRegister : AppCompatActivity() {
             message+="ConfirmPassword: "+confirmPasswordContainer.helperText+"\n\n"
         }
 
-        AlertDialog.Builder(this).setTitle("Invalid Form").setMessage(message).setPositiveButton("Okay"){_,_->
-            //Action
-        }.show()
+        Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
     }
 
 

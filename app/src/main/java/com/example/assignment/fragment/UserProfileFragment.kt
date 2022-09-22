@@ -10,12 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.Button
 import android.widget.ListView
 import com.example.assignment.MainActivity
 import com.example.assignment.R
-import com.example.assignment.UserLogin
-import com.example.assignment.UserProfileActivity.UserSetPersonalInfo
+import com.example.assignment.UserProfileActivity.UserApprovalRequest
+import com.example.assignment.UserProfileActivity.UserPersonalInfo
 
 lateinit var sharedPreferences: SharedPreferences
 //Below are the Key of login sharedPreferences
@@ -56,8 +55,9 @@ class UserProfileFragment : Fragment(){
         userProfileListView.onItemClickListener = AdapterView.OnItemClickListener {
                 parent, view, position, id ->
                 when(position){
-                    0->{ }
-                    1->{val intent = Intent(this.requireActivity(), UserSetPersonalInfo::class.java)
+                    0->{val intent = Intent(this.requireActivity(), UserApprovalRequest::class.java)
+                        startActivity(intent)}
+                    1->{val intent = Intent(this.requireActivity(), UserPersonalInfo::class.java)
                         startActivity(intent)}
                     2->{}
                     3->{val editor: SharedPreferences.Editor = sharedPreferences.edit()

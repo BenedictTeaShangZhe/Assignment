@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserProfileActivity.UserSetPersonalInfo">
+    tools:context=".UserProfileActivity.UserApprovalRequest">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -13,11 +13,12 @@
         android:background="#3F51B5"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:contentInsetStartWithNavigation="72dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:title="@string/SetPersonalInformation"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="@string/ApplyForApproval"
         app:titleMarginStart="30dp"
         app:titleTextColor="#FFF" />
 

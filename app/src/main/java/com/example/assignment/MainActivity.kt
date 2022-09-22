@@ -58,13 +58,14 @@ class MainActivity : AppCompatActivity() {
 
         //Initialized the sharedPreferences
         sharedPreferences = getSharedPreferences(PREFS_KEY, Context.MODE_PRIVATE)
-        //Read the email & password from sharedPreferences, if not null means login already
+
 
 
     }
 
     override fun onResume() {
         super.onResume()
+        //Read the email & password from sharedPreferences, if not null means login already
         phone = sharedPreferences.getString(PHONE_KEY, "").toString()
         //Used to navigate to different fragment
         bottom_navigation.setOnItemSelectedListener{

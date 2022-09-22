@@ -108,16 +108,12 @@ class UserLogin : AppCompatActivity() {
                     finish()
 
                 }else{
-                    AlertDialog.Builder(this).setTitle("Login Failed").setMessage("The password is not correct").setPositiveButton("Okay"){
-                            _,_->
-                    }.show()
+                    Toast.makeText(applicationContext, "The password is not correct", Toast.LENGTH_LONG).show()
                 }
 
             }
             else{
-                AlertDialog.Builder(this).setTitle("Login Failed").setMessage("The phone number is not existed").setPositiveButton("Okay"){
-                    _,_->
-                }.show()
+                Toast.makeText(applicationContext, "The phone number is not existed", Toast.LENGTH_LONG).show()
             }
     }
     }
@@ -131,9 +127,7 @@ class UserLogin : AppCompatActivity() {
             message+="Password: "+passwordContainer.helperText+"\n\n"
         }
 
-        AlertDialog.Builder(this).setTitle("Invalid Form").setMessage(message).setPositiveButton("Okay"){ _, _->
-            //Action
-        }.show()
+        Toast.makeText(applicationContext, message, Toast.LENGTH_LONG).show()
     }
 
 

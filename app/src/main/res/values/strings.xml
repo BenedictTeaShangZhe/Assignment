@@ -21,4 +21,11 @@
     <string name="UserProfile">User Profile</string>
     <string name="LoginHere"><u>Already Have an account? \n Login Here</u></string>
     <string name="SetPersonalInformation">Set Personal Information</string>
+    <string name="ApplyForApproval">Apply For Approval</string>
+    <string name="user_name">  <u>Full Name</u></string>
+    <string name="user_icnumber">  <u>IC Number</u></string>
+    <string name="user_gender">  <u>Gender</u></string>
+    <string name="user_address">  <u>Address</u></string>
+    <string name="user_birthday">  <u>Birthday</u></string>
+    <string name="user_status">  <u>Status</u></string>
 </resources>
