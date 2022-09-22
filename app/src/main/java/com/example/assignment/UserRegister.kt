@@ -3,7 +3,6 @@ package com.example.assignment
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Patterns
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
@@ -44,7 +43,7 @@ class UserRegister : AppCompatActivity() {
         txtConfirmPassword = findViewById(R.id.txtconfirmPassword)
         registerButton = findViewById(R.id.btnRegister)
         clearButton = findViewById(R.id.btnClear)
-        LoginText = findViewById(R.id.tvLogin)
+        LoginText = findViewById(R.id.tvRegister)
 
         //input validation
         phoneFocusListener()

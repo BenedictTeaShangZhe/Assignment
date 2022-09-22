@@ -19,4 +19,6 @@
     <string name="confirmPassword">Confirm Password</string>
     <string name="phone">Phone Number</string>
     <string name="UserProfile">User Profile</string>
+    <string name="LoginHere"><u>Already Have an account? \n Login Here</u></string>
+    <string name="SetPersonalInformation">Set Personal Information</string>
 </resources>

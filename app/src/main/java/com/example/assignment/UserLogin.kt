@@ -1,13 +1,9 @@
 package com.example.assignment
 
-import android.app.ActionBar
 import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
@@ -46,7 +42,7 @@ class UserLogin : AppCompatActivity() {
         txtPassword = findViewById(R.id.txtPassword)
         loginButton = findViewById(R.id.btnRegister)
         clearButton = findViewById(R.id.btnClear)
-        registerText = findViewById(R.id.tvLogin)
+        registerText = findViewById(R.id.tvRegister)
 
 
         //Database declaration(Copy)

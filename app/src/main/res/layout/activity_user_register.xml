@@ -130,16 +130,16 @@
         app:layout_constraintTop_toBottomOf="@+id/confirmpasswordContainer" />
 
     <TextView
-        android:id="@+id/tvLogin"
+        android:id="@+id/tvRegister"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="138dp"
         android:layout_marginEnd="139dp"
         android:layout_marginBottom="88dp"
-        android:text="Already Have an account? \n Login Here"
+        android:text="@string/LoginHere"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
-        android:textColor="#8F8686"
+        android:textColor="@android:color/darker_gray"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.484"

@@ -16,14 +16,24 @@
         android:theme="@style/Theme.Assignment"
         tools:targetApi="31">
         <activity
-            android:name=".UserRegister"
+            android:name=".UserProfileActivity.UserPersonalInfo"
             android:exported="false" />
+        <activity
+            android:name=".UserProfileActivity.UserSetPersonalInfo"
+            android:exported="false"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".UserRegister"
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".UserLogin"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
