@@ -1,15 +1,18 @@
 package com.example.assignment.AdminProfileActivity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.assignment.MainActivity
 import com.example.assignment.R
 import com.example.assignment.User
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
-class ReviewOfApprovalApplication : AppCompatActivity() {
+class ReviewOfApprovalApplication : AppCompatActivity(),UserApprovalRecyclerviewAdapter.OnItemClickListener {
     //realtime database initialization (Copy)
     private lateinit var myDB: FirebaseDatabase
     private lateinit var myRef: DatabaseReference
@@ -43,6 +46,7 @@ class ReviewOfApprovalApplication : AppCompatActivity() {
 
         approvalArrayList = arrayListOf<User>()
         getApprovalData()
+
     }
 
     private fun getApprovalData() {
@@ -50,17 +54,30 @@ class ReviewOfApprovalApplication : AppCompatActivity() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 if(snapshot.exists()){
                     for(approvalSnapshot in snapshot.children){
-                        val approval = approvalSnapshot.getValue(User::class.java)
-                        approvalArrayList.add(approval!!)
+                        if(approvalSnapshot.child("status").value=="Requesting"){
+                            val approval = approvalSnapshot.getValue(User::class.java)
+                            approvalArrayList.add(approval!!)
+                        }
                     }
-                    approval_recyclerview.adapter=UserApprovalRecyclerviewAdapter(approvalArrayList)
+                    var adapter = UserApprovalRecyclerviewAdapter(approvalArrayList,this@ReviewOfApprovalApplication)
+                    approval_recyclerview.adapter= adapter
                 }
             }
 
             override fun onCancelled(error: DatabaseError) {
-                TODO("Not yet implemented")
+                Toast.makeText(applicationContext, "Error Occured", Toast.LENGTH_LONG).show()
             }
 
         })
+    }
+
+    override fun itemClick(position: Int) {
+        val selectItem = approvalArrayList[position]
+        val bundle = Bundle()
+        bundle.putString("phone", selectItem.phoneNumber)
+
+        val intent = Intent(this, ReviewSingelApprovalApplication::class.java)
+        intent.putExtras(bundle)
+        startActivity(intent)
     }
 }

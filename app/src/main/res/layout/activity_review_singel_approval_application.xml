@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminProfileActivity.ReviewSingelApprovalApplication">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:contentInsetStartWithNavigation="72dp"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="@string/ApprovalApplication"
+        app:titleMarginStart="30dp"
+        app:titleTextColor="#FFF"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView_IC_Back_ApprovalReview"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="19dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView_IC_Front_ApprovalReview"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:srcCompat="@tools:sample/avatars" />
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_IC_Front_ApprovalReview">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_UserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_name"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_ICNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_icnumber"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvICNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_Gender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_gender"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvGender"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_Address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_address"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_Birthday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_birthday"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvBirthday"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnApprove"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="72dp"
+        android:layout_marginTop="36dp"
+        android:text="Approve"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <Button
+        android:id="@+id/btnReject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="80dp"
+        android:text="Reject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/btnApprove" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -19,6 +19,9 @@
         android:theme="@style/Theme.Assignment"
         tools:targetApi="31">
         <activity
+            android:name=".AdminProfileActivity.ReviewSingelApprovalApplication"
+            android:exported="false" />
+        <activity
             android:name=".AdminProfileActivity.CheckApprovedUsers"
             android:exported="false"
             android:label="@string/title_activity_check_approved_users"

@@ -29,7 +29,7 @@ class UserPersonalInfo : AppCompatActivity() {
     private var phone = ""
 
     //XML initialization
-    lateinit var toolbar: androidx.appcompat.widget.Toolbar
+    private lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var layout_UserName:TextInputLayout
     private lateinit var layout_ICNumber:TextInputLayout
     private lateinit var layout_Gender:TextInputLayout
