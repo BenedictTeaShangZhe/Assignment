@@ -104,6 +104,7 @@ class UserPersonalInfo : AppCompatActivity() {
 
         layout_UserName.setOnClickListener() {
             val edittext = EditText(this)
+            edittext.setSingleLine()
             myRef.child(phone).get().addOnSuccessListener() {
                 edittext.setText(it.child("name").value.toString())
             }
@@ -118,6 +119,7 @@ class UserPersonalInfo : AppCompatActivity() {
         }
         layout_ICNumber.setOnClickListener() {
             val edittext = EditText(this)
+            edittext.setSingleLine()
             myRef.child(phone).get().addOnSuccessListener(){
                 edittext.setText(it.child("icNumber").value.toString())
             }
@@ -151,6 +153,7 @@ class UserPersonalInfo : AppCompatActivity() {
         }
         layout_Address.setOnClickListener() {
             val edittext = EditText(this)
+            edittext.setSingleLine()
             myRef.child(phone).get().addOnSuccessListener(){
                 edittext.setText(it.child("address").value.toString())
             }
@@ -165,6 +168,7 @@ class UserPersonalInfo : AppCompatActivity() {
         }
         tvBirthday.setOnClickListener() {
             val edittext = EditText(this)
+            edittext.setSingleLine()
             myRef.child(phone).get().addOnSuccessListener(){
                 edittext.setText(it.child("birthday").value.toString())
             }
