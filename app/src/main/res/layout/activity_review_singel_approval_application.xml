@@ -21,7 +21,7 @@
         tools:ignore="MissingConstraints" />
 
     <ImageView
-        android:id="@+id/imageView_IC_Back_ApprovalReview"
+        android:id="@+id/imageView_IC_Front_ApprovalReview"
         android:layout_width="175dp"
         android:layout_height="175dp"
         android:layout_marginStart="16dp"
@@ -31,7 +31,7 @@
         tools:srcCompat="@tools:sample/avatars" />
 
     <ImageView
-        android:id="@+id/imageView_IC_Front_ApprovalReview"
+        android:id="@+id/imageView_IC_Back_ApprovalReview"
         android:layout_width="175dp"
         android:layout_height="175dp"
         android:layout_marginTop="19dp"

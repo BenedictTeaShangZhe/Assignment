@@ -79,7 +79,7 @@ class CheckSingleApprovedUser : AppCompatActivity() {
             var rejectReason : String = "IC Photo Not Clear"
             var rejectSuccess : Boolean = true
 
-            AlertDialog.Builder(this).setTitle("Select Gender").setSingleChoiceItems(rejectOptions,0){ _, position->
+            AlertDialog.Builder(this).setTitle("Select Reason").setSingleChoiceItems(rejectOptions,0){ _, position->
                 when(position){
                     0-> rejectReason = "IC Photo Not Clear"
                     1-> rejectReason = "Personal Info Not Complete"
@@ -89,7 +89,7 @@ class CheckSingleApprovedUser : AppCompatActivity() {
             setPositiveButton("OK"){ _, _->
                 myRef.child(phone).child("rejectedReason").setValue(rejectReason).addOnFailureListener(){
                     rejectSuccess=false}
-                myRef.child(phone).child("status").setValue("Not Approved").addOnFailureListener(){
+                myRef.child(phone).child("status").setValue("Rejected").addOnFailureListener(){
                     rejectSuccess=false}
                 if(rejectSuccess){
                     Toast.makeText(applicationContext, "User"+tvUserNameApproved.text.toString()+"have been rejected", Toast.LENGTH_LONG).show()
