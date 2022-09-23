@@ -8,10 +8,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.assignment.fragment.FoodBankFragment
-import com.example.assignment.fragment.HomepageFragment
-import com.example.assignment.fragment.SearchingFragment
-import com.example.assignment.fragment.UserProfileFragment
+import com.example.assignment.fragment.*
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
@@ -27,9 +24,10 @@ class MainActivity : AppCompatActivity() {
     private val searchingFragment = SearchingFragment()
     private val foodBankFragment = FoodBankFragment()
     private val userprofileFragment = UserProfileFragment()
+    private val adminProfileFragment = AdminProfile()
     lateinit var bottom_navigation : BottomNavigationView
     // Below are used to do the login function
-    lateinit var sharedPreferences: SharedPreferences
+    private lateinit var sharedPreferences: SharedPreferences
     //Below are the Key of login sharedPreferences
     private var PREFS_KEY = "prefs"
     private var PHONE_KEY = "phone"
@@ -74,10 +72,13 @@ class MainActivity : AppCompatActivity() {
                 R.id.ic_search->replaceFragment(searchingFragment)
                 R.id.ic_foodbank->replaceFragment(foodBankFragment)
                 R.id.ic_userprofile->{
-                    if (phone != "") {
+                    if(phone == "0104123456"){
+                        //if login with admin's account
+                        replaceFragment(adminProfileFragment)}
+                    else if (phone != "") {
                         //if already login then go to the fragment
                         replaceFragment(userprofileFragment)
-                    }else{
+                    } else{
                         //if haven't login then go to the login activity
                         val intent = Intent(this, UserLogin::class.java)
                         startActivity(intent)

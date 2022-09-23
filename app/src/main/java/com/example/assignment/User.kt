@@ -4,8 +4,8 @@ import java.time.LocalDate
 import java.util.*
 
 data class User(
-    val PhoneNumber:String,
-    val Password:String,
+    val PhoneNumber:String= "",
+    val Password:String= "",
     val Name:String = "",
     val IcNumber:String = "",
     val Gender:String = "",

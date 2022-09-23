@@ -21,7 +21,7 @@ class UserPersonalInfo : AppCompatActivity() {
     private lateinit var auth : FirebaseAuth
 
     lateinit var sharedPreferences: SharedPreferences
-    lateinit var toolbar: androidx.appcompat.widget.Toolbar
+
     //Below are the Key of login sharedPreferences
     private var PREFS_KEY = "prefs"
     private var PHONE_KEY = "phone"
@@ -29,6 +29,7 @@ class UserPersonalInfo : AppCompatActivity() {
     private var phone = ""
 
     //XML initialization
+    lateinit var toolbar: androidx.appcompat.widget.Toolbar
     private lateinit var layout_UserName:TextInputLayout
     private lateinit var layout_ICNumber:TextInputLayout
     private lateinit var layout_Gender:TextInputLayout

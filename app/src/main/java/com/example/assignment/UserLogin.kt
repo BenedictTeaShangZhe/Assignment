@@ -13,7 +13,7 @@ import com.google.firebase.database.FirebaseDatabase
 
 class UserLogin : AppCompatActivity() {
     // Below are used to do the login function
-    lateinit var sharedPreferences: SharedPreferences
+    private lateinit var sharedPreferences: SharedPreferences
     //Below are the Key of login sharedPreferences
     private var PREFS_KEY = "prefs"
     private var PHONE_KEY = "phone"

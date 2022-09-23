@@ -22,4 +22,76 @@
         app:titleMarginStart="30dp"
         app:titleTextColor="#FFF" />
 
+    <ImageView
+        android:id="@+id/imageView_IC_Front"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="37dp"
+        android:background="@drawable/ic_imageview_outline"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/imageView_IC_Back"
+        android:layout_width="175dp"
+        android:layout_height="175dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/ic_imageview_outline"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_Upload_Instruction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginEnd="50dp"
+        android:text="@string/please_upload_photo"
+        android:textAlignment="center"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_IC_Front" />
+
+    <Button
+        android:id="@+id/btn_IC_Front"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="68dp"
+        android:text="IC Front"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Upload_Instruction" />
+
+    <Button
+        android:id="@+id/btn_IC_Back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="50dp"
+        android:text="IC Back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Upload_Instruction" />
+
+    <Button
+        android:id="@+id/btn_Submit_Approval"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="117dp"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="117dp"
+        android:clickable="true"
+        android:text="Submit Approval"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_Upload_Instruction" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

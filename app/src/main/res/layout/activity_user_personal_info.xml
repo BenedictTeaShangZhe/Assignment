@@ -32,7 +32,7 @@
                 app:titleMarginStart="30dp"
                 app:titleTextColor="#FFF" />
 
-            <Space
+            <androidx.legacy.widget.Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
@@ -60,7 +60,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Space
+            <androidx.legacy.widget.Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
@@ -88,7 +88,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Space
+            <androidx.legacy.widget.Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
@@ -116,7 +116,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Space
+            <androidx.legacy.widget.Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
@@ -144,7 +144,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Space
+            <androidx.legacy.widget.Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
@@ -173,7 +173,7 @@
 
             </com.google.android.material.textfield.TextInputLayout>
 
-            <Space
+            <androidx.legacy.widget.Space
                 android:layout_width="match_parent"
                 android:layout_height="20dp" />
 
