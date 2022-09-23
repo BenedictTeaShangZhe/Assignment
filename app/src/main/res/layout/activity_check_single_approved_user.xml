@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminProfileActivity.CheckSingleApprovedUser">
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="412dp"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="?attr/actionBarTheme"
+            app:contentInsetStartWithNavigation="72dp"
+            app:navigationIcon="@drawable/ic_back"
+            app:title="@string/ApprovedUser"
+            app:titleMarginStart="30dp"
+            app:titleTextColor="#FFF" />
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_PhoneApproved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_phone"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvPhoneApproved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_UserNameApproved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_name"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvUserNameApproved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_ICNumberApproved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_icnumber"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvICNumberApproved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_GenderApproved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_gender"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvGenderApproved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_AddressApproved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_address"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvAddressApproved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.legacy.widget.Space
+            android:layout_width="match_parent"
+            android:layout_height="20dp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/layout_BirthdayApproved"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#3F51B5"
+            android:textColorHint="#FFFFFF"
+            app:boxBackgroundMode="filled"
+            app:helperText="@string/user_birthday"
+            app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium"
+            app:helperTextTextColor="@color/white">
+
+            <TextView
+                android:id="@+id/tvBirthdayApproved"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#C1C4C6"
+                android:gravity="center"
+                android:padding="10dp"
+                android:textColor="#000000"
+                android:textColorHint="#808080"
+                android:textSize="16sp" />
+
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnReject_Approved"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="159dp"
+        android:text="Reject"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -28,6 +28,7 @@
     <string name="user_address">  <u>Address</u></string>
     <string name="user_birthday">  <u>Birthday</u></string>
     <string name="user_status">  <u>Status</u></string>
+    <string name="user_phone">  <u>Phone</u></string>
     <string name="please_upload_photo">Please upload the photo of your IC \n ( Front &amp; Back )</string>
     <string name="AdminProfile">Admin Profile</string>
     <string name="AboutUs">About Us</string>
@@ -40,9 +41,10 @@
     <string name="second_fragment_label">Second Fragment</string>
     <string name="next">Next</string>
     <string name="previous">Previous</string>
-
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="ReviewOfApprovalApplication">Review of Approval Application</string>
     <string name="ApprovalApplication">User\'s Approval Application</string>
+    <string name="ApprovedUsers">Approved Users</string>
+    <string name="ApprovedUser">Approved User</string>
 </resources>

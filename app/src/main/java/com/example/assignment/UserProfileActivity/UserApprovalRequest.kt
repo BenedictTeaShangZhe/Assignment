@@ -108,12 +108,23 @@ class UserApprovalRequest : AppCompatActivity() {
 
         //Detect have user applied or not
         myRef.child(phone).get().addOnSuccessListener(){
+            val rejectReason = it.child("rejectedReason").value.toString()
             if(it.child("status").value.toString()=="Requesting"){
                 AlertDialog.Builder(this).setTitle("Applied").setMessage("You have already applied before").
                 setPositiveButton("Okay"){_,_->
                     finish()
                 }.show()
-
+            }
+            if(it.child("status").value.toString()=="Rejected"){
+                AlertDialog.Builder(this).setTitle("Rejected!").setMessage("You have been rejected due to:\n$rejectReason").
+                setPositiveButton("Okay"){_,_->
+                }.show()
+            }
+            if(it.child("status").value.toString()=="Approved"){
+                AlertDialog.Builder(this).setTitle("Approved!").setMessage("You have been Approved").
+                setPositiveButton("Okay"){_,_->
+                    finish()
+                }.show()
             }
         }
 
@@ -160,6 +171,7 @@ class UserApprovalRequest : AppCompatActivity() {
 
 
                 if(uploadICFrontSuccess && uploadICBackSuccess){
+                    myRef.child(phone).child("rejectedReason").setValue("")
                     myRef.child(phone).child("status").setValue("Requesting").addOnSuccessListener(){
                         Toast.makeText(applicationContext, "You have successfully apply for approval", Toast.LENGTH_LONG).show()
                         finish()

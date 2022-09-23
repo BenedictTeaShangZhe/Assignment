@@ -19,16 +19,23 @@
         android:theme="@style/Theme.Assignment"
         tools:targetApi="31">
         <activity
+            android:name=".AdminProfileActivity.CheckSingleApprovedUser"
+            android:exported="false"
+            android:screenOrientation="portrait"/>
+        <activity
             android:name=".AdminProfileActivity.ReviewSingelApprovalApplication"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".AdminProfileActivity.CheckApprovedUsers"
             android:exported="false"
             android:label="@string/title_activity_check_approved_users"
-            android:theme="@style/Theme.Assignment.NoActionBar" />
+            android:theme="@style/Theme.Assignment.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".AdminProfileActivity.ReviewOfApprovalApplication"
-            android:exported="false" />
+            android:exported="false"
+            android:screenOrientation="portrait"/>
 
         <provider
             android:name="androidx.core.content.FileProvider"

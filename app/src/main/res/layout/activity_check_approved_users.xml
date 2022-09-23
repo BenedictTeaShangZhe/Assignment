@@ -6,4 +6,28 @@
     android:layout_height="match_parent"
     tools:context=".AdminProfileActivity.CheckApprovedUsers">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="412dp"
+        android:layout_height="wrap_content"
+        android:background="#3F51B5"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:contentInsetStartWithNavigation="72dp"
+        app:navigationIcon="@drawable/ic_back"
+        app:title="@string/ApprovedUser"
+        app:titleMarginStart="30dp"
+        app:titleTextColor="#FFF"
+        tools:ignore="MissingConstraints" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/approved_recyclerview"
+        android:layout_width="409dp"
+        android:layout_height="673dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        tools:listitem="@layout/approval_recyclerview_item"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

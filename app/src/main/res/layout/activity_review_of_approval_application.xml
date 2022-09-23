@@ -21,7 +21,7 @@
         tools:ignore="MissingConstraints" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/approval_recyclerview"
+        android:id="@+id/approved_recyclerview"
         android:layout_width="409dp"
         android:layout_height="673dp"
         app:layout_constraintBottom_toBottomOf="parent"

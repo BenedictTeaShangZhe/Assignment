@@ -6,17 +6,14 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.assignment.MainActivity
 import com.example.assignment.R
 import com.example.assignment.User
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 
 class ReviewOfApprovalApplication : AppCompatActivity(),UserApprovalRecyclerviewAdapter.OnItemClickListener {
     //realtime database initialization (Copy)
     private lateinit var myDB: FirebaseDatabase
     private lateinit var myRef: DatabaseReference
-    private lateinit var auth : FirebaseAuth
     private lateinit var approval_recyclerview :RecyclerView
     private lateinit var approvalArrayList : ArrayList<User>
 
@@ -40,7 +37,7 @@ class ReviewOfApprovalApplication : AppCompatActivity(),UserApprovalRecyclerview
         //reference = database table
         myRef = myDB.getReference("User")
 
-        approval_recyclerview = findViewById(R.id.approval_recyclerview)
+        approval_recyclerview = findViewById(R.id.approved_recyclerview)
         approval_recyclerview.layoutManager = LinearLayoutManager(this)
         approval_recyclerview.setHasFixedSize(true)
 
@@ -79,5 +76,6 @@ class ReviewOfApprovalApplication : AppCompatActivity(),UserApprovalRecyclerview
         val intent = Intent(this, ReviewSingelApprovalApplication::class.java)
         intent.putExtras(bundle)
         startActivity(intent)
+        finish()
     }
 }

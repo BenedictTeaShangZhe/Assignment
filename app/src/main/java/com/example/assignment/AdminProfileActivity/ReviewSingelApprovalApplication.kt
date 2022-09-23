@@ -1,5 +1,6 @@
 package com.example.assignment.AdminProfileActivity
 
+import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.example.assignment.R
 import com.google.firebase.database.DatabaseReference
@@ -53,6 +55,8 @@ class ReviewSingelApprovalApplication : AppCompatActivity() {
         setSupportActionBar(toolbar)
         toolbar.setNavigationIcon(R.drawable.ic_back)
         toolbar.setNavigationOnClickListener(){
+            val intent = Intent(this, ReviewOfApprovalApplication::class.java)
+            startActivity(intent)
             finish()
         }
 
@@ -89,11 +93,6 @@ class ReviewSingelApprovalApplication : AppCompatActivity() {
             tvAddress.text = it.child("address").value.toString()
             tvBirthday.text = it.child("birthday").value.toString()
         }.addOnFailureListener(){
-            tvUserName.text = "Fail"
-            tvICNumber.text = "Fail"
-            tvGender.text = "Fail"
-            tvAddress.text = "Fail"
-            tvBirthday.text = "Fail"
         }
 
         //get the IC picture
@@ -104,14 +103,51 @@ class ReviewSingelApprovalApplication : AppCompatActivity() {
         icFront.getFile(filefront).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(filefront.absolutePath)
             imageView_IC_Front_Approve.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 500, 500, false))}.
-        addOnFailureListener{Toast.makeText(applicationContext,it.message,Toast.LENGTH_LONG).show() }
+        addOnFailureListener{Toast.makeText(applicationContext,"IC Image Not Uploaded",Toast.LENGTH_LONG).show() }
 
         icBack.getFile(fileback).addOnSuccessListener {
             val bitmap = BitmapFactory.decodeFile(fileback.absolutePath)
             imageView_IC_Back_Approve.setImageBitmap(Bitmap.createScaledBitmap(bitmap, 500, 500, false))}.
-        addOnFailureListener{Toast.makeText(applicationContext,it.message,Toast.LENGTH_LONG).show() }
+        addOnFailureListener{Toast.makeText(applicationContext,"IC Image Not Uploaded",Toast.LENGTH_LONG).show() }
 
+        //Button Function
+        btnApprove.setOnClickListener(){
+            AlertDialog.Builder(this).setTitle("Approve").setMessage("Are you sure you want to Approve this user?").setPositiveButton("Yes"){_,_->
+                myRef.child(phone).child("rejectedReason").setValue("")
+                myRef.child(phone).child("status").setValue("Approved").addOnSuccessListener(){
+                    Toast.makeText(applicationContext, "User"+tvUserName.text.toString()+"have been approved", Toast.LENGTH_LONG).show()
+                    finish()}.addOnFailureListener(){
+                    Toast.makeText(applicationContext, it.toString(), Toast.LENGTH_LONG).show()
+                }
+            }.setNeutralButton("Cancel"){_,_->}.show()
+        }
+
+        btnReject.setOnClickListener(){
+            val rejectOptions = arrayOf("IC Photo Not Clear","Personal Info Not Complete","Personal Info Not Match with IC")
+            var rejectReason : String = "IC Photo Not Clear"
+            var rejectSuccess : Boolean = true
+
+            AlertDialog.Builder(this).setTitle("Select Gender").setSingleChoiceItems(rejectOptions,0){_, position->
+                when(position){
+                    0-> rejectReason = "IC Photo Not Clear"
+                    1-> rejectReason = "Personal Info Not Complete"
+                    2-> rejectReason = "Personal Info Not Match with IC"
+                }
+            }.
+            setPositiveButton("OK"){ _, _->
+                myRef.child(phone).child("rejectedReason").setValue(rejectReason).addOnFailureListener(){
+                    rejectSuccess=false}
+                myRef.child(phone).child("status").setValue("Not Approved").addOnFailureListener(){
+                    rejectSuccess=false}
+                if(rejectSuccess){
+                    Toast.makeText(applicationContext, "User"+tvUserName.text.toString()+"have been rejected", Toast.LENGTH_LONG).show()
+                    val intent = Intent(this, ReviewOfApprovalApplication::class.java)
+                    startActivity(intent)
+                    finish()}
+            }.setNeutralButton("Cancel"){_,_->}.show()
+        }
     }
+
 
 
 }
