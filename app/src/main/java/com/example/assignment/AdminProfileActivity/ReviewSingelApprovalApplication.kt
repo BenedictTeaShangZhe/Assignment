@@ -66,7 +66,7 @@ class ReviewSingelApprovalApplication : AppCompatActivity() {
         tvUserName = findViewById(R.id.tvUserName)
         tvICNumber = findViewById(R.id.tvICNumber)
         tvGender = findViewById(R.id.tvGender)
-        tvAddress = findViewById(R.id.tvAddress)
+        tvAddress = findViewById(R.id.tvDonerRequestAddress)
         tvBirthday = findViewById(R.id.tvBirthday)
         btnApprove = findViewById(R.id.btnApprove)
         btnReject = findViewById(R.id.btnReject)

@@ -3,15 +3,36 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/drawable/ic_back.xml" value="0.2265" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/drawable/ic_homepage.xml" value="0.2265" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/drawable/ic_search.xml" value="0.2265" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_display_food_record.xml" value="0.2359375" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_displaying_food_donate_record.xml" value="0.1734375" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_displaying_food_request_record.xml" value="0.1765625" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_food_donation_form.xml" value="0.25" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_food_record.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_food_request_form.xml" value="0.4" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_user_login.xml" value="0.25" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_user_register.xml" value="0.25" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/activity_userlist.xml" value="0.1" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/fragment_food_bank.xml" value="0.2" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/fragment_food_donate_record.xml" value="0.25" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/fragment_food_record.xml" value="0.264" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/fragment_food_request_record.xml" value="0.2359375" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/fragment_homepage.xml" value="0.18177083333333333" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/fragment_searching.xml" value="0.25" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/list_layout_view.xml" value="0.1890625" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/request_layout_view.xml" value="0.264" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/layout/user_item.xml" value="0.2" />
+        <entry key="..\:/Users/Lai Ming Huan/Assignment/app/src/main/res/menu/menu.xml" value="0.25" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/drawable/ic_back.xml" value="0.259" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/drawable/ic_imageview_outline.xml" value="0.2505" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/drawable/ic_shoppingbag.xml" value="0.144" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/layout-w936dp/fragment_admin_profile.xml" value="0.190234375" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/layout/activity_check_approved_users.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/layout/activity_check_single_approved_user.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/layout/activity_review_of_approval_application.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/layout/activity_review_singel_approval_application.xml" value="0.4" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/layout/activity_user_about_us.xml" value="0.4" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/layout/activity_user_approval_request.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Assignment/app/src/main/res/layout/activity_user_login.xml" value="0.3464203233256351" />

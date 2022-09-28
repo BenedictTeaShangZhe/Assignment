@@ -7,18 +7,49 @@
     tools:context=".fragment.FoodBankFragment">
 
     <!-- TODO: Update blank fragment layout -->
+
     <TextView
         android:id="@+id/tv_foodbankpage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="119dp"
-        android:layout_marginTop="356dp"
-        android:layout_marginEnd="119dp"
-        android:layout_marginBottom="356dp"
-        android:text="Here is the Food Bank Page"
+        android:layout_marginBottom="650dp"
+        android:text="Food Bank"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnRequestFood"
+        android:layout_width="272dp"
+        android:layout_height="131dp"
+        android:text="Request Food"
+        app:layout_constraintBottom_toTopOf="@+id/btnDonateFood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_foodbankpage" />
+
+    <Button
+        android:id="@+id/btnDonateFood"
+        android:layout_width="272dp"
+        android:layout_height="131dp"
+        android:layout_marginBottom="300dp"
+        android:text="Donate Food"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnRequestFood" />
+
+    <Button
+        android:id="@+id/btnRecord"
+        android:layout_width="272dp"
+        android:layout_height="131dp"
+        android:layout_marginBottom="120dp"
+        android:text="Food Record"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnDonateFood" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

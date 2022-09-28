@@ -20,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myRef: DatabaseReference
     private lateinit var auth : FirebaseAuth
 
+
     private val homepageFragment = HomepageFragment()
     private val searchingFragment = SearchingFragment()
     private val foodBankFragment = FoodBankFragment()

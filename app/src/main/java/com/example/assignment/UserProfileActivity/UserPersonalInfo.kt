@@ -69,7 +69,7 @@ class UserPersonalInfo : AppCompatActivity() {
         tvUserName = findViewById(R.id.tvUserName)
         tvICNumber = findViewById(R.id.tvICNumber)
         tvGender = findViewById(R.id.tvGender)
-        tvAddress = findViewById(R.id.tvAddress)
+        tvAddress = findViewById(R.id.tvDonerRequestAddress)
         tvBirthday = findViewById(R.id.tvBirthday)
         tvStatus = findViewById(R.id.tvStatus)
 

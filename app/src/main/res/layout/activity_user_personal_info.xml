@@ -132,7 +132,7 @@
                 app:helperTextTextAppearance="@style/TextAppearance.AppCompat.Medium">
 
                 <TextView
-                    android:id="@+id/tvAddress"
+                    android:id="@+id/tvDonerRequestAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C1C4C6"
