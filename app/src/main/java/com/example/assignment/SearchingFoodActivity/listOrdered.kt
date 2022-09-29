@@ -11,19 +11,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment.R
 import com.google.firebase.database.*
 
-class listOrdered : AppCompatActivity(), orderedAdapter.OnItemClickListener {
+class listOrdered : AppCompatActivity() {
 
     lateinit var sharedPreferences: SharedPreferences
 
-    //Below are the Key of login sharedPreferences
     private var PREFS_KEY = "prefs"
     private var PHONE_KEY = "phone"
-    //Below are to validate the status of login
     private var phone = ""
-
-    //private lateinit var imgQR : ImageView
-    //private lateinit var bitmap: Bitmap
-    //private lateinit var qrEncoder: QRGEncoder
 
     private lateinit var myDB: FirebaseDatabase
     private lateinit var orderedRef: DatabaseReference
@@ -50,9 +44,7 @@ class listOrdered : AppCompatActivity(), orderedAdapter.OnItemClickListener {
         orderedRef = myDB.getReference("userOrdered")
         userOrderedArrayList = arrayListOf<dataOrdered>()
 
-        //imgQR = findViewById(R.id.imgQR)
-
-        val orderedAdapter = orderedAdapter(userOrderedArrayList,this)
+        val orderedAdapter = orderedAdapter(userOrderedArrayList)
 
         rvUserOrdered = findViewById(R.id.rvUserOrdered)
         rvUserOrdered.adapter = orderedAdapter
@@ -71,7 +63,7 @@ class listOrdered : AppCompatActivity(), orderedAdapter.OnItemClickListener {
                             userOrderedArrayList.add(list!!)
                         }
                     }
-                    val adapter = orderedAdapter(userOrderedArrayList,this@listOrdered)
+                    val adapter = orderedAdapter(userOrderedArrayList)
                     rvUserOrdered.adapter= adapter
                 }
             }
@@ -80,16 +72,4 @@ class listOrdered : AppCompatActivity(), orderedAdapter.OnItemClickListener {
             }
         })
     }
-
-    override fun itemClick(position: Int) {
-
-        val selectOrdered = userOrderedArrayList[position]
-        val bundle1 = Bundle()
-        bundle1.putString("orderedPhoneNo", selectOrdered.phoneNo)
-        val intent = Intent(this, listStation::class.java)
-
-        intent.putExtras(bundle1)
-        startActivity(intent)
-    }
-
 }

@@ -6,8 +6,9 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment.R
+import com.example.assignment.donerList
 
-class foodAdapter(private val foodList: ArrayList<FoodData>, private val listener: foodAdapter.OnItemClickListener)
+class foodAdapter(private val foodList: ArrayList<donerList>, private val listener: foodAdapter.OnItemClickListener)
     : RecyclerView.Adapter<foodAdapter.MyViewHolder> () {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener{
@@ -37,9 +38,9 @@ class foodAdapter(private val foodList: ArrayList<FoodData>, private val listene
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = foodList[position]
 
-        holder.foodName.text = currentItem.foodName
+        holder.foodName.text = currentItem.food
         holder.foodType.text = currentItem.foodType
-        holder.foodQuantity.text = currentItem.foodQuantity.toString()
+        holder.foodQuantity.text = currentItem.quantity
 
     }
 

@@ -9,13 +9,14 @@ import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment.R
+import com.example.assignment.donerList
 import com.google.firebase.database.*
 
 class listFood : AppCompatActivity(), foodAdapter.OnItemClickListener{
 
     private lateinit var myDB: FirebaseDatabase
     private lateinit var foodRef: DatabaseReference
-    private lateinit var foodArrayList: ArrayList<FoodData>
+    private lateinit var foodArrayList: ArrayList<donerList>
     private lateinit var rvFoodList : RecyclerView
     private lateinit var btnCart: Button
     private lateinit var btnDirection : Button
@@ -37,12 +38,12 @@ class listFood : AppCompatActivity(), foodAdapter.OnItemClickListener{
         btnDirection = findViewById(R.id.btnDirection)
         btnCart = findViewById(R.id.btnToCart)
 
-        val name = intent.getStringExtra("stationName")
-        val address = intent.getStringExtra("stationAddress")
+        val stationname = intent.getStringExtra("stationName")
+        val stationaddress = intent.getStringExtra("stationAddress")
 
         myDB = FirebaseDatabase.getInstance()
-        foodRef = myDB.getReference("Food")
-        foodArrayList = arrayListOf<FoodData>()
+        foodRef = myDB.getReference("Doner Details")
+        foodArrayList = arrayListOf<donerList>()
 
         val foodAdapter = foodAdapter(foodArrayList,this)
         rvFoodList = findViewById(R.id.rvFoodList)
@@ -50,7 +51,7 @@ class listFood : AppCompatActivity(), foodAdapter.OnItemClickListener{
         rvFoodList.layoutManager= LinearLayoutManager(this)
         rvFoodList.setHasFixedSize(true)
 
-        getFoodData(name)
+        getFoodData(stationname)
 
         btnCart.setOnClickListener(){
             val intent = Intent(this,listCart::class.java)
@@ -58,20 +59,20 @@ class listFood : AppCompatActivity(), foodAdapter.OnItemClickListener{
         }
 
         btnDirection.setOnClickListener(){
-            val address = Uri.parse("geo:0,0?q=" + address)
+            val address = Uri.parse("geo:0,0?q=" + stationaddress)
             val intent = Intent(Intent.ACTION_VIEW, address)
             startActivity(intent)
         }
 
     }
 
-    private fun getFoodData(name: String?){
+    private fun getFoodData(location: String?){
         foodRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot){
                 if(snapshot.exists()){
                     for (foodSnapshot in snapshot.children){
-                        if (foodSnapshot.child("foodAddress").value == name) {
-                            val list = foodSnapshot.getValue(FoodData::class.java)
+                        if (foodSnapshot.child("location").value == location) {
+                            val list = foodSnapshot.getValue(donerList::class.java)
                             foodArrayList.add(list!!)
                         }
                     }
@@ -89,8 +90,8 @@ class listFood : AppCompatActivity(), foodAdapter.OnItemClickListener{
         val selectFood = foodArrayList[position]
         val bundle1 = Bundle()
         val bundle2 = Bundle()
-        bundle1.putString("foodName", selectFood.foodName)
-        bundle2.putString("stationAddress",selectFood.foodAddress)
+        bundle1.putString("foodName", selectFood.food)
+        bundle2.putString("stationAddress",selectFood.address)
         val intent = Intent(this, listCart::class.java)
         intent.putExtras(bundle1)
         intent.putExtras(bundle2)
