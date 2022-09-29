@@ -19,6 +19,18 @@
         android:theme="@style/Theme.Assignment"
         tools:targetApi="31">
         <activity
+            android:name=".SearchingFoodActivity.listUserOrdered"
+            android:exported="false" />
+        <activity
+            android:name=".SearchingFoodActivity.listStation"
+            android:exported="false" />
+        <activity
+            android:name=".SearchingFoodActivity.listCart"
+            android:exported="false" />
+        <activity
+            android:name=".SearchingFoodActivity.listFood"
+            android:exported="false" />
+        <activity
             android:name=".UserlistActivity"
             android:exported="false" />
         <activity
