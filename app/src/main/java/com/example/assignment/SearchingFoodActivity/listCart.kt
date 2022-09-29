@@ -105,8 +105,8 @@ class listCart : AppCompatActivity() {
             if (name == null){
                 Toast.makeText(applicationContext, "Invalid Order!!!",Toast.LENGTH_LONG)
             }
-            if (name != null) {
 
+            if (name != null) {
                 orderedRef.child(count.toString()).get().addOnSuccessListener() {
                     if (rbIsPickup == true) {
                         val mode = "Pickup"
