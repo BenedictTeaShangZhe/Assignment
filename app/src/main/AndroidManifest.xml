@@ -19,7 +19,7 @@
         android:theme="@style/Theme.Assignment"
         tools:targetApi="31">
         <activity
-            android:name=".SearchingFoodActivity.listUserOrdered"
+            android:name=".SearchingFoodActivity.listOrdered"
             android:exported="false" />
         <activity
             android:name=".SearchingFoodActivity.listStation"

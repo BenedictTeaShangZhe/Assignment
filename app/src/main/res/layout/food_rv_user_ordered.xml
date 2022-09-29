@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="#673AB7"
+    app:cardCornerRadius="18dp"
+    app:cardElevation="18dp">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -24,7 +27,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=" Phone No    :"
-                android:textSize="14sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -35,7 +39,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=" Food Name    :"
-                android:textSize="14sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -46,7 +51,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Food Quantity :"
-                android:textSize="14sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -57,7 +63,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=" Food Address    :"
-                android:textSize="14sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -68,7 +75,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=" Mode    :"
-                android:textSize="14sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -79,7 +87,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text=" Order Status    :"
-                android:textSize="14sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -101,7 +110,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="TextView"
-                android:textSize="14sp" />
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -111,7 +121,9 @@
                 android:id="@+id/tvOfoodName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -121,7 +133,9 @@
                 android:id="@+id/tvOfoodQuantity"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -131,7 +145,9 @@
                 android:id="@+id/tvOfoodAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -141,7 +157,9 @@
                 android:id="@+id/tvOmode"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -151,7 +169,9 @@
                 android:id="@+id/tvOstatus"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="TextView" />
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"
@@ -161,4 +181,4 @@
 
     </LinearLayout>
 
-</LinearLayout>
+</androidx.cardview.widget.CardView>

@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import com.example.assignment.R
 import com.example.assignment.SearchingFoodActivity.listStation
-import com.example.assignment.SearchingFoodActivity.listUserOrdered
+import com.example.assignment.SearchingFoodActivity.listOrdered
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -52,7 +52,7 @@ class SearchingFragment : Fragment() {
             startActivity(intent)}
 
         btnOrdered.setOnClickListener(){
-            val intent = Intent(this.requireActivity(), listUserOrdered::class.java)
+            val intent = Intent(this.requireActivity(), listOrdered::class.java)
             startActivity(intent)}
     }
 }

@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment.R
 
-class orderedAdapter(private val userOrderedList : ArrayList<OrderedData>, private val listener: orderedAdapter.OnItemClickListener)
+class orderedAdapter(private val userOrderedList : ArrayList<dataOrdered>, private val listener: orderedAdapter.OnItemClickListener)
     : RecyclerView.Adapter<orderedAdapter.MyViewHolder> () {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener{

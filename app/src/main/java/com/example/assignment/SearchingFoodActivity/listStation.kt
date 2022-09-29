@@ -13,7 +13,7 @@ class listStation : AppCompatActivity(), stationAdapter.OnItemClickListener {
 
     private lateinit var myDB: FirebaseDatabase
     private lateinit var stationRef: DatabaseReference
-    private lateinit var stationArrayList: ArrayList<StationData>
+    private lateinit var stationArrayList: ArrayList<dataStation>
     private lateinit var rvStationList : RecyclerView
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
 
@@ -31,7 +31,7 @@ class listStation : AppCompatActivity(), stationAdapter.OnItemClickListener {
 
         myDB = FirebaseDatabase.getInstance()
         stationRef = myDB.getReference("Station")
-        stationArrayList = arrayListOf<StationData>()
+        stationArrayList = arrayListOf<dataStation>()
 
         val stationAdapter = stationAdapter(stationArrayList, this)
 
@@ -48,7 +48,7 @@ class listStation : AppCompatActivity(), stationAdapter.OnItemClickListener {
             override fun onDataChange(snapshot: DataSnapshot){
                 if(snapshot.exists()){
                     for (foodSnapshot in snapshot.children){
-                        val list = foodSnapshot.getValue(StationData::class.java)
+                        val list = foodSnapshot.getValue(dataStation::class.java)
                         stationArrayList.add(list!!)
                     }
                     val adapter = stationAdapter(stationArrayList,this@listStation)

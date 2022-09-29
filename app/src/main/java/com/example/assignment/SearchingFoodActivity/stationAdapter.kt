@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment.R
 
-class stationAdapter (private val stationList : ArrayList<StationData>, private val listener: OnItemClickListener)
+class stationAdapter (private val stationList : ArrayList<dataStation>, private val listener: OnItemClickListener)
     : RecyclerView.Adapter<stationAdapter.MyViewHolder> () {
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view), View.OnClickListener{

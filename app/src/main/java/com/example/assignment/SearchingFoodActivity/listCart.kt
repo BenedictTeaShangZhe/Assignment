@@ -71,7 +71,7 @@ class listCart : AppCompatActivity() {
         val address = intent.getStringExtra("stationAddress").toString()
         val name = intent.getStringExtra("foodName").toString()
         val quantity = "1"
-        myCartModel.addItem(CartData(name,quantity))
+        myCartModel.addItem(dataCart(name,quantity))
         displayCartList()
 
         userRef.child(phone).get().addOnSuccessListener {
@@ -95,54 +95,63 @@ class listCart : AppCompatActivity() {
         }
 
         btnConfirmOrder.setOnClickListener() {
+            val phoneNo = phone
+            val foodName = name
+            val foodQuantity = quantity
+            val foodAddress = address
+            val orderStatus = "waiting to receive"
             ++count
-            orderedRef.child(count.toString()).get().addOnSuccessListener() {
-                val phoneNo = phone
-                val foodName = name
-                val foodQuantity = quantity
-                val foodAddress = address
-                val orderStatus = "waiting to receive"
-                if (rbIsPickup == true) {
-                    val mode = "Pickup"
-                    val ordered1 =
-                        OrderedData(phoneNo, foodName, foodQuantity, foodAddress, mode, orderStatus)
-                    orderedRef.child(count.toString()).setValue(ordered1)
-                        .addOnSuccessListener {
-                            Toast.makeText(
-                                applicationContext,
-                                "Successfully ordered",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }.addOnFailureListener {
-                            Toast.makeText(applicationContext, "Error!!", Toast.LENGTH_LONG).show()
-                        }
-                }
-                if (rbIsPickup == false) {
-                    val mode = "Delivery"
-                    val ordered2 =
-                        OrderedData(phoneNo, foodName, foodQuantity, foodAddress, mode, orderStatus)
-                    orderedRef.child(count.toString()).setValue(ordered2)
-                        .addOnSuccessListener {
-                            Toast.makeText(
-                                applicationContext,
-                                "Successfully ordered",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }.addOnFailureListener {
-                            Toast.makeText(applicationContext, "Error!!", Toast.LENGTH_LONG).show()
-                        }
-                }
+
+            if (name == null){
+                Toast.makeText(applicationContext, "Invalid Order!!!",Toast.LENGTH_LONG)
             }
-            val intent = Intent(this, listUserOrdered::class.java)
-            startActivity(intent)
-            finish()
+            if (name != null) {
+
+                orderedRef.child(count.toString()).get().addOnSuccessListener() {
+                    if (rbIsPickup == true) {
+                        val mode = "Pickup"
+                        val ordered1 = dataOrdered(phoneNo, foodName, foodQuantity, foodAddress, mode, orderStatus)
+
+                        orderedRef.child(count.toString()).setValue(ordered1)
+                            .addOnSuccessListener {
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Successfully ordered",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }.addOnFailureListener {
+                                Toast.makeText(applicationContext, "Error!!", Toast.LENGTH_LONG)
+                                    .show()
+                            }
+                    }
+                    if (rbIsPickup == false) {
+                        val mode = "Delivery"
+                        val ordered2 = dataOrdered(phoneNo, foodName, foodQuantity, foodAddress, mode, orderStatus)
+
+                        orderedRef.child(count.toString()).setValue(ordered2)
+                            .addOnSuccessListener {
+                                Toast.makeText(
+                                    applicationContext,
+                                    "Successfully ordered",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }.addOnFailureListener {
+                                Toast.makeText(applicationContext, "Error!!", Toast.LENGTH_LONG)
+                                    .show()
+                            }
+                    }
+                }
+                val intent = Intent(this, listOrdered::class.java)
+                startActivity(intent)
+                finish()
+            }
         }
     }
 
     fun displayCartList() {
         val selectedItemName: MutableList<String> = mutableListOf<String>()
         val selectedItemQuantity: MutableList<String> = mutableListOf<String>()
-        for(c:CartData in myCartModel.getCartList()){
+        for(c:dataCart in myCartModel.getCartList()){
             selectedItemName.add(c.itemName)
             selectedItemQuantity.add(c.itemQuantity)
         }

@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.assignment.R
 import com.google.firebase.database.*
 
-class listUserOrdered : AppCompatActivity(), orderedAdapter.OnItemClickListener {
+class listOrdered : AppCompatActivity(), orderedAdapter.OnItemClickListener {
 
     lateinit var sharedPreferences: SharedPreferences
 
@@ -27,7 +27,7 @@ class listUserOrdered : AppCompatActivity(), orderedAdapter.OnItemClickListener 
 
     private lateinit var myDB: FirebaseDatabase
     private lateinit var orderedRef: DatabaseReference
-    private lateinit var userOrderedArrayList: ArrayList<OrderedData>
+    private lateinit var userOrderedArrayList: ArrayList<dataOrdered>
     private lateinit var rvUserOrdered : RecyclerView
     lateinit var toolbar: androidx.appcompat.widget.Toolbar
 
@@ -48,7 +48,7 @@ class listUserOrdered : AppCompatActivity(), orderedAdapter.OnItemClickListener 
 
         myDB = FirebaseDatabase.getInstance()
         orderedRef = myDB.getReference("userOrdered")
-        userOrderedArrayList = arrayListOf<OrderedData>()
+        userOrderedArrayList = arrayListOf<dataOrdered>()
 
         //imgQR = findViewById(R.id.imgQR)
 
@@ -67,11 +67,11 @@ class listUserOrdered : AppCompatActivity(), orderedAdapter.OnItemClickListener 
                 if(snapshot.exists()){
                     for (orderedSnapshot in snapshot.children){
                         if (orderedSnapshot.child("phoneNo").value == number) {
-                            val list = orderedSnapshot.getValue(OrderedData::class.java)
+                            val list = orderedSnapshot.getValue(dataOrdered::class.java)
                             userOrderedArrayList.add(list!!)
                         }
                     }
-                    val adapter = orderedAdapter(userOrderedArrayList,this@listUserOrdered)
+                    val adapter = orderedAdapter(userOrderedArrayList,this@listOrdered)
                     rvUserOrdered.adapter= adapter
                 }
             }

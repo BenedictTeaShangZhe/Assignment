@@ -4,13 +4,13 @@ import androidx.lifecycle.ViewModel
 
 class cartModel: ViewModel() {
 
-    private var cartlist: MutableList<CartData> = mutableListOf<CartData>()
+    private var cartlist: MutableList<dataCart> = mutableListOf<dataCart>()
 
-    fun addItem(cartData: CartData) {
+    fun addItem(cartData: dataCart) {
         cartlist.add(cartData)
     }
 
-    fun getCartList(): MutableList<CartData>{
+    fun getCartList(): MutableList<dataCart>{
         return cartlist
     }
 }

@@ -46,14 +46,16 @@
 
     <Button
         android:id="@+id/btnToCart"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="To Cart" />
+        android:insetLeft="140dp"
+        android:text="To Cart"
+        android:textSize="20sp" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvFoodList"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         tools:listitem="@layout/food_rv_item">
 
     </androidx.recyclerview.widget.RecyclerView>
