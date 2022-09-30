@@ -51,15 +51,15 @@ class FoodBankFragment : Fragment() {
         var btnDonateFood = view.findViewById<Button>(R.id.btnDonateFood)
         var btnFoodRecord = view.findViewById<Button>(R.id.btnRecord)
 
-        btnRequestFood.setOnClickListener(){
-            val intent = Intent(this.requireActivity(), FoodRequestForm::class.java)
-            startActivity(intent)
-        }
+        //btnRequestFood.setOnClickListener(){
+        //    val intent = Intent(this.requireActivity(), FoodRequestForm::class.java)
+        //    startActivity(intent)
+        //}
 
-        btnDonateFood.setOnClickListener(){
-            val intent = Intent(this.requireActivity(), FoodDonationForm::class.java)
-            startActivity(intent)
-        }
+        //btnDonateFood.setOnClickListener(){
+        //    val intent = Intent(this.requireActivity(), FoodDonationForm::class.java)
+        //    startActivity(intent)
+        //}
 
         btnFoodRecord.setOnClickListener()
         {
