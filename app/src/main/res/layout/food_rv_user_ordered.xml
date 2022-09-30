@@ -23,10 +23,22 @@
                 android:layout_height="12dp" />
 
             <TextView
+                android:id="@+id/tvOrderID"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=" Order ID           :"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <TextView
                 android:id="@+id/tvphone3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" Phone No    :"
+                android:text=" Phone No        :"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
@@ -38,7 +50,7 @@
                 android:id="@+id/tvname3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" Food Name    :"
+                android:text=" Food Name     :"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
@@ -50,7 +62,7 @@
                 android:id="@+id/tvquantity3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Food Quantity :"
+                android:text="Food Quantity  :"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
@@ -62,7 +74,7 @@
                 android:id="@+id/tvAddress3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" Food Address    :"
+                android:text=" Food Address :"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
@@ -74,7 +86,7 @@
                 android:id="@+id/tvMode3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text=" Mode    :"
+                android:text=" Mode                :"
                 android:textColor="#FFFFFF"
                 android:textSize="20sp" />
 
@@ -100,6 +112,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="12dp" />
+
+            <TextView
+                android:id="@+id/tvOid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
 
             <Space
                 android:layout_width="match_parent"

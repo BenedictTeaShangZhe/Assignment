@@ -91,7 +91,7 @@ class listFood : AppCompatActivity(), foodAdapter.OnItemClickListener{
         val bundle1 = Bundle()
         val bundle2 = Bundle()
         bundle1.putString("foodName", selectFood.food)
-        bundle2.putString("stationAddress",selectFood.address)
+        bundle2.putString("stationAddress",selectFood.location)
         val intent = Intent(this, listCart::class.java)
         intent.putExtras(bundle1)
         intent.putExtras(bundle2)

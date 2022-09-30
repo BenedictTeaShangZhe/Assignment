@@ -12,6 +12,7 @@ class orderedAdapter(private val userOrderedList : ArrayList<dataOrdered>)
 
     inner class MyViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+        val oID : TextView = view.findViewById(R.id.tvOid)
         val oFoodName: TextView = view.findViewById(R.id.tvOfoodName)
         val oFoodAddress: TextView = view.findViewById(R.id.tvOfoodAddress)
         val oMode: TextView = view.findViewById(R.id.tvOmode)
@@ -28,6 +29,7 @@ class orderedAdapter(private val userOrderedList : ArrayList<dataOrdered>)
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = userOrderedList[position]
 
+        holder.oID.text = currentItem.orderId
         holder.oFoodName.text= currentItem.foodName
         holder.oFoodQuantity.text=currentItem.foodQuantity
         holder.oMode.text=currentItem.mode

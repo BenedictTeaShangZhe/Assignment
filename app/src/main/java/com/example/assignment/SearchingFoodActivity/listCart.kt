@@ -8,8 +8,7 @@ import android.widget.*
 import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.ViewModelProvider
 import com.example.assignment.R
-import com.google.firebase.database.DatabaseReference
-import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.*
 import java.util.*
 
 class listCart : AppCompatActivity() {
@@ -74,6 +73,8 @@ class listCart : AppCompatActivity() {
         myCartModel.addItem(dataCart(name,quantity))
         displayCartList()
 
+        countOrderedId()
+
         userRef.child(phone).get().addOnSuccessListener {
             num = it.child("birthday").value.toString()
         }
@@ -100,25 +101,21 @@ class listCart : AppCompatActivity() {
             val foodQuantity = quantity
             val foodAddress = address
             val orderStatus = "waiting to receive"
-            ++count
+            var maxOrderId = (count + 1).toString()
 
-            if (name == null){
-                Toast.makeText(applicationContext, "Invalid Order!!!",Toast.LENGTH_LONG)
+            if (name == "null"){
+                Toast.makeText(applicationContext, "Invalid Order!!!",Toast.LENGTH_LONG).show()
             }
 
-            if (name != null) {
-                orderedRef.child(count.toString()).get().addOnSuccessListener() {
+            if (name != "null") {
+                orderedRef.child(maxOrderId).get().addOnSuccessListener() {
                     if (rbIsPickup == true) {
                         val mode = "Pickup"
-                        val ordered1 = dataOrdered(phoneNo, foodName, foodQuantity, foodAddress, mode, orderStatus)
+                        val ordered1 = dataOrdered(phoneNo, foodName, foodQuantity, foodAddress, mode, orderStatus, maxOrderId)
 
-                        orderedRef.child(count.toString()).setValue(ordered1)
+                        orderedRef.child(maxOrderId).setValue(ordered1)
                             .addOnSuccessListener {
-                                Toast.makeText(
-                                    applicationContext,
-                                    "Successfully ordered",
-                                    Toast.LENGTH_LONG
-                                ).show()
+                                Toast.makeText(applicationContext, "Successfully ordered", Toast.LENGTH_LONG).show()
                             }.addOnFailureListener {
                                 Toast.makeText(applicationContext, "Error!!", Toast.LENGTH_LONG)
                                     .show()
@@ -126,15 +123,11 @@ class listCart : AppCompatActivity() {
                     }
                     if (rbIsPickup == false) {
                         val mode = "Delivery"
-                        val ordered2 = dataOrdered(phoneNo, foodName, foodQuantity, foodAddress, mode, orderStatus)
+                        val ordered2 = dataOrdered(phoneNo, foodName, foodQuantity, foodAddress, mode, orderStatus, maxOrderId)
 
-                        orderedRef.child(count.toString()).setValue(ordered2)
+                        orderedRef.child(maxOrderId).setValue(ordered2)
                             .addOnSuccessListener {
-                                Toast.makeText(
-                                    applicationContext,
-                                    "Successfully ordered",
-                                    Toast.LENGTH_LONG
-                                ).show()
+                                Toast.makeText(applicationContext, "Successfully ordered", Toast.LENGTH_LONG).show()
                             }.addOnFailureListener {
                                 Toast.makeText(applicationContext, "Error!!", Toast.LENGTH_LONG)
                                     .show()
@@ -146,6 +139,21 @@ class listCart : AppCompatActivity() {
                 finish()
             }
         }
+    }
+
+    private fun countOrderedId() {
+        orderedRef.addValueEventListener(object : ValueEventListener {
+            override fun onDataChange(snapshot: DataSnapshot){
+                if(snapshot.exists()) {
+                    for (orderedSnapshot in snapshot.children) {
+                        count++
+                    }
+                }
+            }
+            override fun onCancelled(error: DatabaseError) {
+                Toast.makeText(applicationContext, "Error Occured", Toast.LENGTH_LONG).show()
+            }
+        })
     }
 
     fun displayCartList() {
